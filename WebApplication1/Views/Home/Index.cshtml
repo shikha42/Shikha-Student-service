@@ -4,37 +4,37 @@
 
 <section class="hero-section">
     <div class="container position-relative">
-        <span class="hero-badge">IUBAT — International University of Business Agriculture and Technology</span>
+        <span class="hero-badge">Spotlight &nbsp;•&nbsp; September 2026 — MIT-inspired</span>
         <h1>Campus <span class="accent">Service</span><br>Portal</h1>
-        <p class="lead mb-4">
+        <p class="lead">
             Raise, follow and resolve your ID card, transcript and certificate requests
-            — streamlined, transparent and always available.
+            — streamlined, transparent and always available. Inspired by the clarity and rigor of MIT.
         </p>
         @if (User.Identity != null && User.Identity.IsAuthenticated)
         {
-            <div class="d-flex gap-3 flex-wrap">
+            <div class="hero-actions">
                 @if (User.IsInRole("Student"))
                 {
                     <a asp-controller="Student" asp-action="Create" class="btn btn-primary-custom btn-lg">
-                        + New Service Request
+                        <i class="fas fa-plus" style="font-size:10px;"></i> New Service Request
                     </a>
                     <a asp-controller="Student" asp-action="MyRequests" class="btn btn-outline-custom btn-lg">
-                        My Requests
+                        My Requests &nbsp;<i class="fas fa-arrow-right" style="font-size:10px;"></i>
                     </a>
                 }
                 else if (User.IsInRole("Staff"))
                 {
                     <a asp-controller="Staff" asp-action="AllRequests" class="btn btn-primary-custom btn-lg">
-                        Manage Requests
+                        Manage Requests &nbsp;<i class="fas fa-arrow-right" style="font-size:10px;"></i>
                     </a>
                 }
             </div>
         }
         else
         {
-            <div class="d-flex gap-3 flex-wrap">
+            <div class="hero-actions">
                 <a asp-controller="Account" asp-action="Login" class="btn btn-primary-custom btn-lg">
-                    Sign In
+                    Sign In &nbsp;<i class="fas fa-arrow-right" style="font-size:10px;"></i>
                 </a>
                 <a asp-controller="Account" asp-action="Register" class="btn btn-outline-custom btn-lg">
                     Create Student Account
@@ -44,37 +44,40 @@
     </div>
 </section>
 
-<div class="row g-4 mb-4">
+<div class="row g-3 mb-4">
     <div class="col-md-4">
         <div class="feature-card">
-            <div class="feature-icon purple">🗂️</div>
-            <h5 class="fw-bold">Request Online</h5>
-            <p class="text-muted mb-0">File ID card replacements, transcript and certificate requests in under a minute.</p>
+            <div class="feature-icon purple"><i class="fas fa-file-lines"></i></div>
+            <h5>Request Online</h5>
+            <p>File ID card replacements, transcript and certificate requests in under a minute — as simple as MIT's course catalog.</p>
+            <a href="#" style="font-size:11px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--mit-red); text-decoration:none; margin-top:10px; display:inline-flex; gap:6px; align-items:center;">Learn more <i class="fas fa-arrow-right" style="font-size:9px;"></i></a>
         </div>
     </div>
     <div class="col-md-4">
         <div class="feature-card">
-            <div class="feature-icon cyan">🔍</div>
-            <h5 class="fw-bold">Live Tracking</h5>
-            <p class="text-muted mb-0">Follow every update — Pending → Processing → Completed or Rejected.</p>
+            <div class="feature-icon cyan"><i class="fas fa-magnifying-glass"></i></div>
+            <h5>Live Tracking</h5>
+            <p>Follow every update — Pending → Processing → Completed or Rejected — with MIT-grade transparency.</p>
+            <a href="#" style="font-size:11px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--mit-red); text-decoration:none; margin-top:10px; display:inline-flex; gap:6px; align-items:center;">Track now <i class="fas fa-arrow-right" style="font-size:9px;"></i></a>
         </div>
     </div>
     <div class="col-md-4">
         <div class="feature-card">
-            <div class="feature-icon green">🛡️</div>
-            <h5 class="fw-bold">Staff-Only Control</h5>
-            <p class="text-muted mb-0">Only verified staff can view all requests and update status securely.</p>
+            <div class="feature-icon green"><i class="fas fa-shield-halved"></i></div>
+            <h5>Staff-Only Control</h5>
+            <p>Only verified staff can view all requests and update status — secure, auditable, and accountable.</p>
+            <a href="#" style="font-size:11px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--mit-red); text-decoration:none; margin-top:10px; display:inline-flex; gap:6px; align-items:center;">Staff access <i class="fas fa-arrow-right" style="font-size:9px;"></i></a>
         </div>
     </div>
 </div>
 
-<div class="detail-card" style="border-left: 4px solid var(--du-gold);">
+<div class="detail-card">
     <div class="detail-body d-flex flex-wrap justify-content-between align-items-center gap-3">
         <div>
-            <h5 class="fw-bold mb-1" style="color: var(--du-navy);">Need help with a request?</h5>
-            <p class="text-muted mb-0" style="font-size:0.92rem;">All requests are linked to your student account and visible only to you and authorized staff.</p>
+            <h5 class="fw-bold mb-1" style="color:#000; font-size:13px; letter-spacing:0.08em; text-transform:uppercase;">Need help with a request?</h5>
+            <p class="mb-0" style="font-size:13px; color:#555; max-width:560px;">All requests are linked to your student account and visible only to you and authorized staff. Research and education that matter — service that works.</p>
         </div>
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 flex-wrap">
             <span class="status-badge status-pending">Pending</span>
             <span class="status-badge status-processing">Processing</span>
             <span class="status-badge status-completed">Completed</span>
